@@ -14,6 +14,12 @@ eval_metric_dict = {
         'auc_judd':   {'v': 0, 'f': max},
         'corr_coeff': {'v': 0, 'f': max},
         'similarity': {'v': 0, 'f': max},
+    },
+    'PanoNut360': {
+        'auc_borji':  {'v': 0, 'f': max},
+        'auc_judd':   {'v': 0, 'f': max},
+        'corr_coeff': {'v': 0, 'f': max},
+        'similarity': {'v': 0, 'f': max},
     }
 }
 

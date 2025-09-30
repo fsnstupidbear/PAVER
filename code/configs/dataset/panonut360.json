@@ -1,0 +1,33 @@
+{
+    "dataset_name": "PanoNut360",
+
+    "max_epoch": 5,
+    "warmup_epoch": 0,
+    "batch_size": 1,
+    "num_frame": 5,
+
+    "eval_res": 120,
+
+    "dataset_args": {
+        "root_dir": "panonut360",
+        "dataset_name": "PanoNut360",
+
+        "split_files": {
+            "train": "splits/train.txt",
+            "val": "splits/val.txt",
+            "test": "splits/test.txt"
+        },
+
+        "video_dir": "videos",
+        "video_dir_has_split": true,
+        "video_ext": [".mp4", ".mkv", ".mov"],
+
+        "gt_dir": "saliency",
+        "gt_dir_has_split": false,
+        "gt_ext": [".npy", ".npz", ".png", ".jpg"],
+
+        "viewport_dir": "viewport",
+        "viewport_dir_has_split": false,
+        "viewport_ext": [".npy", ".npz", ".json"]
+    }
+}

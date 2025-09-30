@@ -21,15 +21,22 @@ conda env create -f environment.yml
 ln -s /some/path/to/data data
 ```
 
-3. The `data` directory should be organized as follows. Since the Wild360 dataset is available upon request, you may ask for access [here](http://aliensunmin.github.io/project/360saliency/).
+3. The `data` directory should be organized as follows. Since the Wild360 dataset is available upon request, you may ask for access [here](http://aliensunmin.github.io/project/360saliency/). We also provide configuration hooks for the [PanoNut360](https://github.com/huh-z/panonut360) dataset – see the note below for details.
 
 ```bash
 data
 ├─ wild360                # the dataset should be downloaded on your own
 │  ├─ data/{test,train}
 │  └─ Wild360_GT_29
+├─ panonut360             # optional: follow configs/dataset/panonut360.json
+│  ├─ splits/{train,val,test}.txt
+│  ├─ videos/{train,val,test}/{video_id}.mp4
+│  ├─ saliency/{video_id}/{frame}.npy  # or png / jpg per config
+│  └─ viewport/{video_id}.npy          # optional viewport trajectories
 ├─ cache                  # cache features for fast experiments
 └─ log                    # training log & weights
+
+> **PanoNut360 support**: switch to the dataset-specific configuration via `python cli.py with data_config_path=./code/configs/dataset/panonut360.json`. You can override directory names and file extensions (e.g. if saliency maps are PNGs) by editing `dataset_args` in the JSON file.
 ```
 
 
